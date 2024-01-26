@@ -1,8 +1,9 @@
+/* Estilos generales del swiper */
 .swiper {
   width: 100%;
-  height: 88%;
 }
 
+/* Estilos de cada diapositiva del swiper */
 .swiper-slide {
   text-align: center;
   font-size: 18px;
@@ -11,23 +12,23 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
 }
 
+/* Estilos de la imagen dentro de cada diapositiva */
 .swiper-slide img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
+/* Estilos responsivos para ajustar la altura del swiper en diferentes tamaños de pantalla */
 @media only screen and (max-width: 768px) {
   .swiper {
-      height: 60%;
+    height: 60vh; /* Ajusta según sea necesario */
   }
 }
 
 @media only screen and (max-width: 576px) {
   .swiper {
-      height: 40%;
+    height: 40vh; /* Ajusta según sea necesario */
   }
 }

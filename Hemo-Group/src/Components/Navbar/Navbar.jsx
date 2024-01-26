@@ -4,22 +4,19 @@ import "./Navbar.css";
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const cerrarSesion = () => {
-    navigate(`/`);
-  };
 
   return (
     <div className="bottom-nav">
       <div className="menu-list">
         <>
           <div className="menu">
-            <NavLink to="/productos" className="frame">
+            <NavLink to="/quienessomos" className="frame">
               <i className="ri-group-line"></i>
               <p className="li-mobile-p">Quienes Somos</p>
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/listaQrs" className="frame">
+            <NavLink to="/servicios" className="frame">
               <i className="ri-service-line"></i>
               <p className="li-mobile-p">Servicios</p>
             </NavLink>

@@ -1,4 +1,5 @@
 import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
+import { Helmet } from 'react-helmet'
 import Navbar from "../../Components/Navbar/Navbar";
 import MoreInfoButton from "../../Components/MoreInfo/MoreInfo";
 import "./Home.css";
@@ -17,14 +18,25 @@ import Carpeta from '../../assets/Imagenes/53.png'
 import Correo from '../../assets/Imagenes/55.png'
 import Caset from '../../assets/Imagenes/83.png'
 
+import BannerOne from '../../assets/Imagenes/banner1.jpeg'
+import BannerTwo from '../../assets/Imagenes/banner2.jpeg'
+import BannerThree from '../../assets/Imagenes/banner3.jpeg'
+import BannerFour from '../../assets/Imagenes/banner4.jpeg'
+
 function Home() {
+
+  const imagenes = [BannerOne, BannerTwo, BannerThree, BannerFour]
   return (
     <>
+      <Helmet title="Hemo Group"/>
       <Navbar />
       <div className="container">
-        <SliderSwiper />
+        <SliderSwiper imagenes={imagenes}/>
         <section className="quienes-somos-section">
           <div className="quienes-somos-content">
+          <Typography variant="h4" component="div" gutterBottom>
+              <b>Quienes somos </b>
+            </Typography>
             <Typography variant="h4">
               <b>Misíon </b>
             </Typography>

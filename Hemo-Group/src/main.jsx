@@ -6,7 +6,7 @@ import HubspotChat from './Components/HubspotChat/HubSpotChat'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <HubspotChat />
+      <HubspotChat/>
     <Routes/>
   </React.StrictMode>,
 )

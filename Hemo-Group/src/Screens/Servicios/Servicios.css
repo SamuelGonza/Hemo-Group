@@ -1,0 +1,43 @@
+.tarjetas-servicios-container{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+}
+
+.servicio-tarjeta{
+    width: 100%;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.alreves{
+    flex-direction: row-reverse;
+}
+
+.servicio-imagen{
+    flex: 1;
+    img{
+        width: 100%;
+        border-radius: 16px;
+        transition: 0.3s all ease;
+    }
+    img:hover{
+        transform: scale(1.05);
+    }
+}
+
+.servicio-info{
+    flex: 1;
+    h6{
+        font-size: 1.5em;
+    }
+    p{
+        margin: 25px 0;
+        font-size: 1em;
+    }
+    .servicios-list{
+        margin: 20px 0 0 40px;
+    }
+}

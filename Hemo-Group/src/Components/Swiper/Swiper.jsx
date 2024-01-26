@@ -3,13 +3,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import './Swiper.css'
 import { Pagination, Autoplay, Navigation } from 'swiper/modules';
-import BannerOne from '../../assets/Imagenes/banner1.jpeg'
-import BannerTwo from '../../assets/Imagenes/banner2.jpeg'
-import BannerThree from '../../assets/Imagenes/banner3.jpeg'
-import BannerFour from '../../assets/Imagenes/banner4.jpeg'
 
-
-export const SliderSwiper = () => {
+export const SliderSwiper = ({imagenes}) => {
     return (
         <>
             <Swiper
@@ -26,10 +21,9 @@ export const SliderSwiper = () => {
                 modules={[Autoplay, Pagination, Navigation]}
                 className="mySwiper"
             >
-                <SwiperSlide><img src={BannerOne} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={BannerTwo} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={BannerThree} alt="" /></SwiperSlide>
-                <SwiperSlide><img src={BannerFour} alt="" /></SwiperSlide>
+                {imagenes?.map((imagen, index) => (
+                    <SwiperSlide key={index}><img src={imagen} alt="" /></SwiperSlide>
+                ))}
             </Swiper>
         </>
     );
