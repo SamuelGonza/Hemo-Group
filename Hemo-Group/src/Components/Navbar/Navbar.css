@@ -18,11 +18,14 @@
 
 .contenedor-logos {
   display: none;
-  width: 100%;
+  width: 400px;
+  margin-right: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.logo1{
-  width: 100%;
+.contenedor-logos > img{
 }
 
 .li-mobile-p {

@@ -10,17 +10,8 @@ export default function Navbar() {
 
   return (
     <div className="bottom-nav">
-      <div className="contenedor-logos">
-        <img className="logo1" src={logoSolo} alt="Apps for the world Logo" />
-      </div>
       <div className="menu-list">
         <>
-          <div className="menu">
-            <NavLink to="/inicio" className="frame">
-              <i className="ri-home-3-line"></i>
-              <p className="li-mobile-p">Inicio</p>
-            </NavLink>
-          </div>
           <div className="menu">
             <NavLink to="/productos" className="frame">
               <i className="ri-group-line"></i>
@@ -40,6 +31,9 @@ export default function Navbar() {
             </NavLink>
           </div>
           <div className="menu">
+          <img className="logo1" src={logoSolo} alt="Apps for the world Logo" />
+      </div>
+          <div className="menu">
             <div className="frame">
               <i className="ri-calendar-line"></i>
               <p className="li-mobile-p">Citas</p>
@@ -56,12 +50,6 @@ export default function Navbar() {
               <i className="ri-file-info-line "></i>
               <p className="li-mobile-p">Informes</p>
             </NavLink>
-          </div>
-          <div className="menu">
-            <div onClick={cerrarSesion} className="frame">
-              <i className="ri-logout-box-line"></i>
-              <p className="li-mobile-p">Salir</p>
-            </div>
           </div>
         </>
       </div>
