@@ -3,7 +3,7 @@ import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const MoreInfoButton = () => {
   // Reemplaza 'tu-enlace-de-whatsapp' con el enlace generado de WhatsApp Business
-  const whatsappLink = " https://open.wa.link/open";
+  const whatsappLink = "https://wa.me/message/UKZFP6XX5MPRE1";
 
   return (
     <Button
