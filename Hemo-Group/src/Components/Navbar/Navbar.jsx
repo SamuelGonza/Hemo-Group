@@ -1,8 +1,5 @@
-import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import AppsLogo from "../../assets/navbar-assets/logoCompleto.svg";
 import logoSolo from "../../assets/navbar-assets/LogoSolo.svg";
-import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import "./Navbar.css";
 
 export default function Navbar() {
