@@ -22,6 +22,7 @@ import BannerOne from '../../assets/Imagenes/banner1.jpeg'
 import BannerTwo from '../../assets/Imagenes/banner2.jpeg'
 import BannerThree from '../../assets/Imagenes/banner3.jpeg'
 import BannerFour from '../../assets/Imagenes/banner4.jpeg'
+import WppBoton from "../../Components/WppBoton/WppBoton";
 
 function Home() {
 
@@ -285,6 +286,7 @@ function Home() {
             </div>
             </div>
           </div>
+          <WppBoton/>
         </section>
       </div>
     </>

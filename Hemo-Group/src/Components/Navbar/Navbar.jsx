@@ -10,6 +10,13 @@ export default function Navbar() {
       <div className="menu-list">
         <>
           <div className="menu">
+            <img
+              className="logo1"
+              src={logoSolo}
+              alt="Apps for the world Logo"
+            />
+          </div>
+          <div className="menu">
             <NavLink to="/quienessomos" className="frame">
               <i className="ri-group-line"></i>
               <p className="li-mobile-p">Quienes Somos</p>
@@ -27,9 +34,7 @@ export default function Navbar() {
               <p className="li-mobile-p">Directorio Medico</p>
             </NavLink>
           </div>
-          <div className="menu">
-          <img className="logo1" src={logoSolo} alt="Apps for the world Logo" />
-      </div>
+
           <div className="menu">
             <div className="frame">
               <i className="ri-calendar-line"></i>
