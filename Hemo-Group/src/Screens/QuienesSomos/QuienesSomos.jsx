@@ -8,6 +8,7 @@ import QuienesSomosThree from "../../assets/Imagenes/quienessomos3.jpg"
 import QuienesSomosFour from "../../assets/Imagenes/quienessomos4.jpg"
 import { Helmet } from "react-helmet";
 import WppBoton from "../../Components/WppBoton/WppBoton";
+import Footer from "../../Components/Footer/Footer";
 
 export default function QuienesSomos() {
     const imagenes = [QuienesSomosOne, QuienesSomosTwo, QuienesSomosThree, QuienesSomosFour]
@@ -73,6 +74,7 @@ export default function QuienesSomos() {
             </div>
           </section>
           <WppBoton />
+          <Footer/>
         </div>
       </>
     );

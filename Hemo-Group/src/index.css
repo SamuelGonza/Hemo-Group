@@ -6,3 +6,40 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif !important;
 }
+
+/* Estilo general para Chrome, Safari y Edge */
+*::-webkit-scrollbar {
+  width: 12px; /* Ancho del scrollbar */
+  height: 12px; /* Alto del scrollbar para desplazamiento horizontal */
+}
+
+*::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1); /* Color de fondo de la pista */
+  border-radius: 10px; /* Bordes redondeados de la pista */
+}
+
+*::-webkit-scrollbar-thumb {
+  background: rgb(116, 207, 226); /* Color principal del scrollbar */
+  border-radius: 10px; /* Bordes redondeados del scrollbar */
+  border: 3px solid rgba(0, 0, 0, 0); /* Borde transparente para efectos visuales */
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: rgb(92, 184, 192); /* Color del scrollbar al pasar el mouse, más oscuro para efecto hover */
+  border: 3px solid rgba(0, 0, 0, 0.2); /* Borde sutil al pasar el mouse */
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: rgb(78, 158, 165); /* Color del scrollbar al hacer clic */
+  border-color: rgba(0, 0, 0, 0.3); /* Borde más oscuro al hacer clic */
+}
+
+*::-webkit-scrollbar-corner {
+  background-color: transparent; /* Fondo transparente para la esquina entre scrollbars */
+}
+
+/* Estilo para Firefox */
+* {
+  scrollbar-width: auto; /* "auto" o "thin" */
+  scrollbar-color: rgb(116, 207, 226) rgba(0, 0, 0, 0.1); /* Color del scrollbar y color de la pista */
+}

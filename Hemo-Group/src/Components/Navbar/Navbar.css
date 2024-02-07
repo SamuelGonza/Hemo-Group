@@ -1,7 +1,7 @@
 .bottom-nav {
   display: flex;
   width: 393px;
-  height: 11%!important;
+  height: 11% !important;
   padding-top: 41px;
   flex-direction: column;
   justify-content: flex-end;
@@ -25,11 +25,13 @@
   align-items: center;
 }
 
-.contenedor-logos > img{
-}
 
 .li-mobile-p {
   display: none;
+}
+
+.logo1{
+  margin-left: 10px;
 }
 
 .menu-list {
@@ -85,16 +87,14 @@
   box-shadow: 0 6px 12px #0084a54a; /* Sombra más pronunciada al hacer hover */
 
   i {
-    color: #0083a5!important; /* Cambia el color del ícono */
+    color: #0083a5 !important; /* Cambia el color del ícono */
     transform: rotate(360deg); /* Rotación completa del ícono */
   }
 
-  .li-mobile-p{
+  .li-mobile-p {
     color: #0083a5;
   }
 }
-
-
 
 /* Estilos para dispositivos móviles */
 @media (max-width: 768px) {

@@ -10,7 +10,6 @@ export default function Navbar() {
       <div className="menu-list">
         <>
           <div className="menu">
-<<<<<<< Updated upstream
             <img
               className="logo1"
               src={logoSolo}
@@ -18,45 +17,38 @@ export default function Navbar() {
             />
           </div>
           <div className="menu">
-            <NavLink to="/quienessomos" className="frame">
-=======
             <NavLink to="/" className="frame">
               <i className="ri-home-3-line"></i>
               <p className="li-mobile-p">Inicio</p>
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/" className="frame">
->>>>>>> Stashed changes
+            <NavLink to="/quienessomos" className="frame">
               <i className="ri-group-line"></i>
               <p className="li-mobile-p">Quienes Somos</p>
             </NavLink>
           </div>
           <div className="menu">
-<<<<<<< Updated upstream
             <NavLink to="/servicios" className="frame">
-=======
-            <NavLink to="/" className="frame">
->>>>>>> Stashed changes
               <i className="ri-service-line"></i>
               <p className="li-mobile-p">Servicios</p>
             </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/" className="frame">
+            <NavLink to="/directorio" className="frame">
               <i className="ri-handbag-line"></i>
               <p className="li-mobile-p">Directorio Medico</p>
             </NavLink>
           </div>
 
           <div className="menu">
-            <div className="frame">
+            <NavLink to="/citas" className="frame">
               <i className="ri-calendar-line"></i>
               <p className="li-mobile-p">Citas</p>
-            </div>
+            </NavLink>
           </div>
           <div className="menu">
-            <NavLink to="/" className="frame">
+            <NavLink to="/contacto" className="frame">
               <i className="ri-file-text-line "></i>
               <p className="li-mobile-p">Contacto</p>
             </NavLink>
