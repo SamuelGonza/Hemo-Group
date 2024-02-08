@@ -25,12 +25,11 @@
   align-items: center;
 }
 
-
 .li-mobile-p {
   display: none;
 }
 
-.logo1{
+.logo1 {
   margin-left: 10px;
 }
 
@@ -115,6 +114,10 @@
     border-radius: 20px; /* Suaviza el radio del borde */
   }
 
+  .logo1 {
+    display: none;
+  }
+
   .menu-list {
     justify-content: space-between; /* Espaciado entre elementos */
   }
@@ -171,6 +174,10 @@
     padding-top: 15px; /* Ajusta el padding superior */
     border-radius: 10px; /* Suaviza el radio del borde */
     /* Aquí puedes añadir otros ajustes específicos para este rango de pantalla */
+  }
+
+  .logo1 {
+    display: none;
   }
 
   .menu-list {

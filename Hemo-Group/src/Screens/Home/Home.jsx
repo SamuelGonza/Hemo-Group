@@ -1,48 +1,54 @@
-import { Card, CardContent, CardMedia, Grid, Typography } from "@mui/material";
-import { Helmet } from 'react-helmet'
+import {
+  Card,
+  CardActionArea,
+  CardContent,
+  CardMedia,
+  Grid,
+  Typography,
+} from "@mui/material";
+import { Helmet } from "react-helmet";
 import Navbar from "../../Components/Navbar/Navbar";
 import MoreInfoButton from "../../Components/MoreInfo/MoreInfo";
 import "./Home.css";
 import { SliderSwiper } from "../../Components/Swiper/Swiper";
 
-import CardOne from '../../assets/Imagenes/tarjeta1.jpeg'
-import CardTwo from '../../assets/Imagenes/tarjeta2.jpeg'
-import CardThree from '../../assets/Imagenes/tarjeta3.jpg'
-import CardFour from '../../assets/Imagenes/tarjeta4.jpg'
-import CardFive from '../../assets/Imagenes/tarjeta5.webp'
+import CardOne from "../../assets/Imagenes/tarjeta1.jpeg";
+import CardTwo from "../../assets/Imagenes/tarjeta2.jpeg";
+import CardThree from "../../assets/Imagenes/tarjeta3.jpg";
+import CardFour from "../../assets/Imagenes/tarjeta4.jpg";
+import CardFive from "../../assets/Imagenes/tarjeta5.webp";
 
-import Lapiz from '../../assets/Imagenes/25.png'
-import Libro from '../../assets/Imagenes/02.png'
-import Candado from '../../assets/Imagenes/66.png'
-import Carpeta from '../../assets/Imagenes/53.png'
-import Correo from '../../assets/Imagenes/55.png'
-import Caset from '../../assets/Imagenes/83.png'
+import Lapiz from "../../assets/Imagenes/25.png";
+import Libro from "../../assets/Imagenes/02.png";
+import Candado from "../../assets/Imagenes/66.png";
+import Carpeta from "../../assets/Imagenes/53.png";
+import Correo from "../../assets/Imagenes/55.png";
+import Caset from "../../assets/Imagenes/83.png";
 
-import BannerOne from '../../assets/Imagenes/banner1.jpeg'
-import BannerTwo from '../../assets/Imagenes/banner2.jpeg'
-import BannerThree from '../../assets/Imagenes/banner3.jpeg'
-import BannerFour from '../../assets/Imagenes/banner4.jpeg'
+import BannerOne from "../../assets/Imagenes/banner1.jpeg";
+import BannerTwo from "../../assets/Imagenes/banner2.jpeg";
+import BannerThree from "../../assets/Imagenes/banner3.jpeg";
+import BannerFour from "../../assets/Imagenes/banner4.jpeg";
 import WppBoton from "../../Components/WppBoton/WppBoton";
 import Footer from "../../Components/Footer/Footer";
 
 function Home() {
-
-  const imagenes = [BannerOne, BannerTwo, BannerThree, BannerFour]
+  const imagenes = [BannerOne, BannerTwo, BannerThree, BannerFour];
   return (
     <>
-      <Helmet title="Hemo Group"/>
+      <Helmet title="Hemo Group" />
       <Navbar />
       <div className="container">
-        <SliderSwiper imagenes={imagenes}/>
+        <SliderSwiper imagenes={imagenes} />
         <section className="quienes-somos-section">
           <div className="quienes-somos-content">
-          <Typography variant="h4" component="div" gutterBottom>
+            <Typography variant="h4" component="div" gutterBottom>
               <b>Quienes somos </b>
             </Typography>
             <Typography variant="h4">
               <b>Misíon </b>
             </Typography>
-            <p style={{textAlign: "start"}}>
+            <p style={{ textAlign: "start" }}>
               Somos una institución prestadora de servicios de salud
               especializada en enfermedades hematológicas y oncológicas,
               enfocada en la atención humanizada e integral, comprometida con la
@@ -53,7 +59,7 @@ function Home() {
             <Typography variant="h4">
               <b>Visíon </b>
             </Typography>
-            <p style={{textAlign: "start"}}>
+            <p style={{ textAlign: "start" }}>
               En el año 2025, seremos una institución reconocida a nivel
               nacional en el cuidado, tratamiento e investigación de
               enfermedades hematológicas y oncológicas, apoyado en nuestros
@@ -65,7 +71,12 @@ function Home() {
         </section>
 
         <section className="valores">
-          <Typography variant="h4" sx={{color: "white !important"}} component="div" gutterBottom>
+          <Typography
+            variant="h4"
+            sx={{ color: "white !important" }}
+            component="div"
+            gutterBottom
+          >
             Nuestros Valores
           </Typography>
 
@@ -168,7 +179,8 @@ function Home() {
                     Compromiso
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                  Dedicados a nuestros clientes de la manera más excepcional, con el objetivo de ofrecerte el mejor servicio posible.
+                    Dedicados a nuestros clientes de la manera más excepcional,
+                    con el objetivo de ofrecerte el mejor servicio posible.
                   </Typography>
                 </CardContent>
               </Card>
@@ -193,7 +205,9 @@ function Home() {
                     Integridad
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                  Comprometidos con la integridad en cada paso, nos esforzamos por actuar de manera honesta y ética en todas nuestras interacciones. 
+                    Comprometidos con la integridad en cada paso, nos esforzamos
+                    por actuar de manera honesta y ética en todas nuestras
+                    interacciones.
                   </Typography>
                 </CardContent>
               </Card>
@@ -203,93 +217,167 @@ function Home() {
 
         <section className="quienes-somos-section">
           <div className="quienes-somos-content">
-          <Typography variant="h4" component="div" gutterBottom>
-            Hemo Group Contigo
-          </Typography>
+            <Typography variant="h4" component="div" gutterBottom>
+              Hemo Group Contigo
+            </Typography>
             <div className="contigo-container">
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img"image={Lapiz}/>
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() => (window.location.href = "/citas")}
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Lapiz} />
+                  </div>
+                  <Typography variant="h6">Agenda tu cita</Typography>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Te brindamos un espacio para que puedas agendar tu cita de
+                      manera fácil y rápida, ingresa a esta opción y solicita tu
+                      cita.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                  Agenda tu cita
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Te brindamos un espacio para que puedas agendar tu cita de manera fácil y rápida, ingresa a esta opción y solicita tu cita.
-                  </Typography>
-              </CardContent>
-            </div>
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img" image={Libro}/>
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() =>
+                    (window.location.href =
+                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_DYD.pdf?id=3706296")
+                  }
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Libro} />
+                  </div>
+                  <Typography variant="h6">Deberes y derechos</Typography>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Aquí puedes conocer tus derechos y deberes que como
+                      usuario de Hemo Group tienes. Estamos comprometidos con tu
+                      bienestar y seguridad
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                  Deberes y Derechos
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Aquí puedes conocer tus derechos y deberes que como usuario de Hemo Group tienes. Estamos comprometidos con tu bienestar y seguridad.
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() =>
+                    (window.location.href =
+                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc3_PE-R4-GG%20PoliticaInstitucional.pdf?id=3706295")
+                  }
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Candado} />
+                  </div>
+                  <Typography variant="h6">
+                    Política de seguridad del paciente
                   </Typography>
-              </CardContent>
-            </div>
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img" image={Candado}/>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Porque nuestro compromiso es brindarte una atención
+                      segura, con calidad, y humanizada, tenemos implementada la
+                      política de seguridad del paciente, te invitamos a que la
+                      conozcas..
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                  Política de seguridad del paciente
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Porque nuestro compromiso es brindarte una atención segura, con calidad, y humanizada, tenemos implementada la política de seguridad del paciente, te invitamos a que la conozcas..
-                  </Typography>
-              </CardContent>
-            </div>
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img" image={Carpeta}/>
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() =>
+                    (window.location.href =
+                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc4_Folleto_Pacientes.pdf?id=3706294")
+                  }
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Carpeta} />
+                  </div>
+                  <Typography variant="h6">Manual del paciente</Typography>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Queremos que te mantengas informado, por eso contamos con
+                      el manual del paciente donde puedes consultar todo lo
+                      relacionado a los cuidados que debes tener durante tu
+                      tratamiento de quimioterapia, da clic y conoce toda la
+                      información que tenemos para ti.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                  Manual del paciente
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Queremos que te mantengas informado, por eso contamos con el manual del paciente donde puedes consultar todo lo relacionado a los cuidados que debes tener durante tu tratamiento de quimioterapia, da clic y conoce toda la información que tenemos para ti.
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() =>
+                    (window.location.href =
+                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PE-M1-GG_Pol%C3%ADticasTmtoDatosPersonales.pdf?id=3706292")
+                  }
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Correo} />
+                  </div>
+                  <Typography variant="h6">
+                    Manual de tratamiento de protección de datos
                   </Typography>
-              </CardContent>
-            </div>
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img" image={Correo}/>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Hemo Group respeta el derecho que tienen nuestros usuarios
+                      de conocer, actualizar y rectificar las informaciones que
+                      se hayan recogido sobre ellos, entra acá y conoce nuestro
+                      manual de protección de datos.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                Manual de tratamiento de protección de datos
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Hemo Group respeta el derecho que tienen nuestros usuarios de conocer, actualizar y rectificar las informaciones que se hayan recogido sobre ellos, entra acá y conoce nuestro manual de protección de datos.
+              <div className="contigo-card">
+                <CardActionArea
+                  onClick={() =>
+                    (window.location.href =
+                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PM-M1-GCE%20ManejoHistoriaCl%C3%ADnica.pdf?id=3706293")
+                  }
+                >
+                  <div className="contigo-img">
+                    <CardMedia component="img" image={Caset} />
+                  </div>
+                  <Typography variant="h6">
+                    Manejo y entrega de la Historia Clínica
                   </Typography>
-              </CardContent>
-            </div>
-            <div className="contigo-card">
-              <div className="contigo-img">
-              <CardMedia component="img" image={Caset}/>
+                  <CardContent>
+                    <Typography
+                      className="contigo-parrafo"
+                      variant="body2"
+                      color="text.secondary"
+                    >
+                      Porque tienes derecho a solicitar tu historia clínica y
+                      conocer el manejo que se le da, puedes ingresar a esta
+                      opción y conocer los lineamientos para la solicitud y
+                      entrega de tu historia clínica.
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
               </div>
-                <Typography variant="h6">
-                Manejo y entrega de la Historia Clínica
-                </Typography>
-              <CardContent >
-                <Typography className="contigo-parrafo" variant="body2" color="text.secondary">
-                Porque tienes derecho a solicitar tu historia clínica y conocer el manejo que se le da, puedes ingresar a esta opción y conocer los lineamientos para la solicitud y entrega de tu historia clínica.
-                  </Typography>
-              </CardContent>
-            </div>
             </div>
           </div>
-          <WppBoton/>
+          <WppBoton />
         </section>
-      <Footer/>
+        <Footer />
       </div>
     </>
   );

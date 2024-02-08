@@ -67,39 +67,68 @@
   flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente línea si no caben en una sola fila */
   justify-content: center; /* Distribuye las tarjetas en el contenedor */
   gap: 25px;
-  flex-wrap: wrap
+  flex-wrap: wrap;
+}
+
+.contigo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px; /* Espacio entre tarjetas */
+  padding: 20px; /* Espacio alrededor del contenedor para evitar que las tarjetas toquen los bordes */
 }
 
 .contigo-card {
-  width: 247px; /* Calcula el ancho de cada tarjeta para que haya tres en una fila, con 20px de espacio entre ellas */
+  width: 100%;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-sizing: border-box; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
+  border-radius: 20px; /* Bordes redondeados */
+  background-color: #fff; /* Fondo blanco para resaltar las tarjetas sobre diferentes fondos */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos al pasar el mouse */
+}
 
-  .contigo-img {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.contigo-card:hover {
+  transform: translateY(-5px); /* Eleva la tarjeta al pasar el mouse */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda para efecto de elevación */
+}
 
-    img {
-      width: 180px;
-      height: 180px;
-      object-fit: cover;
-    }
-  }
+.contigo-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee; /* Línea sutil para separar imagen del contenido */
+}
 
-  .contigo-parrafo{
-    text-align:center;
-    width: 100%;
-  }
+.contigo-img img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  margin-top: -60px; /* Eleva la imagen para que sobresalga */
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
   .valores .MuiGrid-grid-xs-12 {
     padding: 0 10px; /* Espaciado lateral en dispositivos móviles */
+  }
+}
+
+@media (max-width: 800px) {
+  .contigo-container {
+    justify-content: space-around; /* Mejora la disposición en pantallas más pequeñas */
+  }
+  .contigo-card {
+    width: calc(50% - 25px); /* Ajusta el ancho de las tarjetas para pantallas pequeñas */
+  }
+}
+
+@media (max-width: 500px) {
+  .contigo-card {
+    width: 100%; /* Las tarjetas ocupan todo el ancho en dispositivos muy pequeños */
+    margin-top: 20px;
   }
 }
