@@ -1,17 +1,17 @@
 import { Typography } from "@mui/material";
 import Navbar from "../../Components/Navbar/Navbar";
 import { SliderSwiper } from "../../Components/Swiper/Swiper";
-import QuienesSomosOne from "../../assets/Imagenes/quienessomos1.jpg"
-import QuienesSomosTwo from "../../assets/Imagenes/quienessomos2.jpg"
-import QuienesSomosThree from "../../assets/Imagenes/quienessomos3.jpg"
-import QuienesSomosFour from "../../assets/Imagenes/quienessomos4.jpg"
+import BannerOne from "../../assets/Imagenes/HemoBanner4.png";
+import BannerTwo from "../../assets/Imagenes/HemoBanner2.png";
+import BannerThree from "../../assets/Imagenes/HemoBanner.png";
+import BannerFour from "../../assets/Imagenes/HemoBanner3.png";
 import { Helmet } from "react-helmet";
 import WppBoton from "../../Components/WppBoton/WppBoton";
 import Footer from "../../Components/Footer/Footer";
 import "./QuienesSomos.css"
 
 export default function QuienesSomos() {
-    const imagenes = [QuienesSomosOne, QuienesSomosTwo, QuienesSomosThree, QuienesSomosFour]
+    const imagenes = [BannerOne, BannerTwo, BannerThree, BannerFour];
     return (
       <>
         <Helmet title="Quienes somos - Hemo Group" />

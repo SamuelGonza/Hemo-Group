@@ -25,15 +25,14 @@ import Carpeta from "../../assets/Imagenes/53.png";
 import Correo from "../../assets/Imagenes/55.png";
 import Caset from "../../assets/Imagenes/83.png";
 
-import BannerOne from "../../assets/Imagenes/banner1.jpeg";
-import BannerTwo from "../../assets/Imagenes/banner2.jpeg";
-import BannerThree from "../../assets/Imagenes/banner3.jpeg";
-import BannerFour from "../../assets/Imagenes/banner4.jpeg";
+import BannerOne from "../../assets/Imagenes/HemoBanner3.png";
+import BannerTwo from "../../assets/Imagenes/HemoBanner2.png";
+import BannerThree from "../../assets/Imagenes/HemoBanner.png";
 import WppBoton from "../../Components/WppBoton/WppBoton";
 import Footer from "../../Components/Footer/Footer";
 
 function Home() {
-  const imagenes = [BannerOne, BannerTwo, BannerThree, BannerFour];
+  const imagenes = [BannerOne, BannerTwo, BannerThree];
   return (
     <>
       <Helmet title="Hemo Group" />

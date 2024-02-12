@@ -1,5 +1,5 @@
 /* Estilos generales del swiper */
-.swiper {
+.mySwiper {
   width: 100%;
 }
 
@@ -15,20 +15,20 @@
 }
 
 /* Estilos de la imagen dentro de cada diapositiva */
-.swiper-slide img {
+.mySwiper img {
   width: 100%;
-  object-fit: cover;
+  object-fit: cover!important;
 }
 
 /* Estilos responsivos para ajustar la altura del swiper en diferentes tamaños de pantalla */
 @media only screen and (max-width: 768px) {
-  .swiper {
-    height: 60vh; /* Ajusta según sea necesario */
+  .mySwiper {
+    height: 80vh; /* Ajusta según sea necesario */
   }
 }
 
 @media only screen and (max-width: 576px) {
-  .swiper {
+  .mySwiper {
     height: 40vh; /* Ajusta según sea necesario */
   }
 }
