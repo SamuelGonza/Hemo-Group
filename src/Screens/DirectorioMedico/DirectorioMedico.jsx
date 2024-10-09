@@ -1,4 +1,12 @@
-import { Avatar, Box, Container, Grid, Paper, Typography } from "@mui/material";
+import {
+  Avatar,
+  Box,
+  Container,
+  Grid,
+  Typography,
+  Card,
+  CardContent,
+} from "@mui/material";
 import { Helmet } from "react-helmet";
 import Navbar from "../../Components/Navbar/Navbar";
 import "./DirectorioMedico.css";
@@ -60,55 +68,95 @@ function DirectorioMedico() {
       specialty: "Hemato oncólogo Pediatra",
       image: doctor8,
     },
-    // Repite para los demás doctores...
   ];
 
   return (
     <>
       <Helmet title="Directorio Medico - Hemo Group" />
       <Navbar />
-      <Container maxWidth="lg" style={{ marginTop: 110, marginBottom: 100 }}>
+      <Container
+        maxWidth="lg"
+        sx={{ marginTop: "110px", marginBottom: "50px" }}
+      >
         <Typography
           variant="h3"
-          gutterBottom
-          paragraph
-          style={{ textAlign: "center", fontWeight: "bold" }}
+          sx={{
+            textAlign: "center",
+            fontWeight: "bold",
+            mb: 2,
+            color: "#000",
+          }}
         >
           Doctores
         </Typography>
-        <Typography variant="h5" gutterBottom style={{ textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          sx={{ textAlign: "center", mb: 8, color: "#ffffff" }}
+        >
           Presentación de nuestros doctores
         </Typography>
         <Box
           display="flex"
           justifyContent="center"
-          style={{ overflow: "auto" }}
+          sx={{
+            overflow: "auto",
+            borderRadius: "15px",
+            padding: "20px",
+          }}
         >
-          <Grid container spacing={4} justifyContent="center">
+          <Grid container spacing={6} justifyContent="center">
             {doctors.map((doctor, index) => (
               <Grid item key={index} xs={12} sm={6} md={4}>
-                <Box
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  overflow="hidden"
+                <Card
+                  sx={{
+                    background: "rgba(255, 255, 255, 0.1)",
+                    backdropFilter: "blur(10px)",
+                    borderRadius: "20px",
+                    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.2)",
+                    transition: "transform 0.3s ease-in-out",
+                    "&:hover": { transform: "scale(1.05)" },
+                  }}
                 >
-                  <Avatar
-                    alt={doctor.name}
-                    src={doctor.image}
-                    style={{ width: 240, height: 240, marginBottom: 2 }}
-                  />
-                  <Typography
-                    variant="subtitle1"
-                    gutterBottom
-                    style={{ textAlign: "center" }}
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="center"
+                    sx={{ padding: "20px" }}
                   >
-                    {doctor.name}
-                  </Typography>
-                  <Typography variant="body2" color="textSecondary">
-                    {doctor.specialty}
-                  </Typography>
-                </Box>
+                    <Avatar
+                      alt={doctor.name}
+                      src={doctor.image}
+                      sx={{
+                        width: 240,
+                        height: 240,
+                        marginBottom: 2,
+                        border: "4px solid #00FFFF",
+                        transition: "box-shadow 0.3s ease-in-out",
+                        "&:hover": {
+                          boxShadow: "0px 0px 15px 5px #00FFFF",
+                        },
+                      }}
+                    />
+                    <CardContent>
+                      <Typography
+                        variant="subtitle1"
+                        sx={{
+                          textAlign: "center",
+                          color: "#000",
+                          textShadow: "0px 0px 5px rgba(255, 255, 255, 0.6)",
+                        }}
+                      >
+                        {doctor.name}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        sx={{ color: "#B0E0E6", textAlign: "center" }}
+                      >
+                        {doctor.specialty}
+                      </Typography>
+                    </CardContent>
+                  </Box>
+                </Card>
               </Grid>
             ))}
           </Grid>
