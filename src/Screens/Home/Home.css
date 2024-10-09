@@ -7,7 +7,7 @@
 }
 
 .swiper-container {
-  margin-top: 80px;
+  margin-top: 110px;
 }
 
 .valores {
@@ -30,13 +30,13 @@
 }
 
 .contigo-img {
-  height: 150px;
+  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .contigo-img img {
-  max-height: 100%;
+  max-height: 50%;
   object-fit: contain;
 }

@@ -117,21 +117,6 @@ function Home() {
     },
   ];
 
-  const servicios = [
-    {
-      title: "Atención Médica Especializada",
-      description: "Contamos con un equipo médico altamente capacitado.",
-    },
-    {
-      title: "Laboratorio Clínico",
-      description: "Servicios de análisis clínicos con resultados rápidos.",
-    },
-    {
-      title: "Urgencias",
-      description: "Atención de urgencias las 24 horas, todos los días.",
-    },
-  ];
-
   const testimonios = [
     {
       name: "Juan Pérez",
@@ -157,13 +142,12 @@ function Home() {
         <SliderSwiper imagenes={imagenes} />
       </div>
       <Container maxWidth="lg" className="container">
-        {/* Valores Section */}
         <section className="valores">
           <Typography
             variant="h3"
             paragraph
             gutterBottom
-            sx={{ textAlign: "center", mb: 4 }}
+            sx={{ textAlign: "center", mb: 4, mt: 4 }}
           >
             Nuestros Valores
           </Typography>
@@ -231,6 +215,7 @@ function Home() {
                         hoveredCard === index ? "scale(1.05)" : "scale(1)",
                       transition: "transform 0.3s",
                       boxShadow: "0 3px 5px rgba(0, 0, 0, 0.2)",
+                      height: "auto",
                     }}
                   >
                     <Box className="contigo-img" sx={{ padding: 2 }}>
@@ -238,6 +223,7 @@ function Home() {
                         src={option.image}
                         alt={option.title}
                         style={{ width: "100%", height: "auto" }}
+                        className="contigo-img"
                       />
                     </Box>
                     <CardContent>
@@ -255,29 +241,8 @@ function Home() {
           </Grid>
         </section>
 
-        {/* Services Section */}
-        <section>
-          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
-            Nuestros Servicios
-          </Typography>
-          <Grid container spacing={4} justifyContent="center">
-            {servicios.map((servicio, index) => (
-              <Grid item xs={12} sm={6} md={4} key={index}>
-                <Paper elevation={3} sx={{ padding: 3, textAlign: "center" }}>
-                  <Typography variant="h6" gutterBottom>
-                    {servicio.title}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {servicio.description}
-                  </Typography>
-                </Paper>
-              </Grid>
-            ))}
-          </Grid>
-        </section>
-
         {/* Testimonials Section */}
-        <section>
+        <section style={{ mb: 8 }}>
           <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
             Testimonios
           </Typography>
