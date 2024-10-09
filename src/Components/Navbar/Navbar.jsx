@@ -10,11 +10,7 @@ export default function Navbar() {
       <div className="menu-list">
         <>
           <div className="menu">
-            <img
-              className="logo1"
-              src={logoSolo}
-              alt="Apps for the world Logo"
-            />
+            <img className="logo1" src={logoSolo} alt="HemoGroupLogo" />
           </div>
           <div className="menu">
             <NavLink to="/" className="frame">

@@ -5,12 +5,19 @@ import {
   CardMedia,
   Grid,
   Typography,
+  Box,
+  Container,
+  Button,
+  Paper,
+  IconButton,
 } from "@mui/material";
 import { Helmet } from "react-helmet";
 import Navbar from "../../Components/Navbar/Navbar";
-import MoreInfoButton from "../../Components/MoreInfo/MoreInfo";
-import "./Home.css";
 import { SliderSwiper } from "../../Components/Swiper/Swiper";
+import WppBoton from "../../Components/WppBoton/WppBoton";
+import Footer from "../../Components/Footer/Footer";
+import StarIcon from "@mui/icons-material/Star";
+import { useState } from "react";
 
 import CardOne from "../../assets/Imagenes/tarjeta1.jpeg";
 import CardTwo from "../../assets/Imagenes/tarjeta2.jpeg";
@@ -28,356 +35,279 @@ import Caset from "../../assets/Imagenes/83.png";
 import BannerOne from "../../assets/Imagenes/HemoBanner3.png";
 import BannerTwo from "../../assets/Imagenes/HemoBanner2.png";
 import BannerThree from "../../assets/Imagenes/HemoBanner.png";
-import WppBoton from "../../Components/WppBoton/WppBoton";
-import Footer from "../../Components/Footer/Footer";
 
 function Home() {
   const imagenes = [BannerOne, BannerTwo, BannerThree];
+
+  const valores = [
+    {
+      title: "Responsabilidad",
+      description:
+        "Nos hacemos cargo de las consecuencias de nuestras acciones y decisiones.",
+      image: CardOne,
+    },
+    {
+      title: "Respeto",
+      description:
+        "Valoramos y consideramos las opiniones y necesidades de los demás.",
+      image: CardThree,
+    },
+    {
+      title: "Humanización",
+      description:
+        "Actuamos con honestidad y coherencia en todas nuestras acciones.",
+      image: CardTwo,
+    },
+    {
+      title: "Compromiso",
+      description:
+        "Dedicados a nuestros clientes de la manera más excepcional, con el objetivo de ofrecerte el mejor servicio posible.",
+      image: CardFive,
+    },
+    {
+      title: "Integridad",
+      description:
+        "Comprometidos con la integridad en cada paso, nos esforzamos por actuar de manera honesta y ética en todas nuestras interacciones.",
+      image: CardFour,
+    },
+  ];
+
+  const contigoOptions = [
+    {
+      title: "Agenda tu cita",
+      description:
+        "Te brindamos un espacio para que puedas agendar tu cita de manera fácil y rápida.",
+      image: Lapiz,
+      link: "/citas",
+    },
+    {
+      title: "Deberes y derechos",
+      description:
+        "Conoce tus derechos y deberes que como usuario de Hemo Group tienes.",
+      image: Libro,
+      link: "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_DYD.pdf?id=3706296",
+    },
+    {
+      title: "Política de seguridad del paciente",
+      description:
+        "Conoce nuestra política de seguridad del paciente que implementamos para tu bienestar.",
+      image: Candado,
+      link: "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc3_PE-R4-GG%20PoliticaInstitucional.pdf?id=3706295",
+    },
+    {
+      title: "Manual del paciente",
+      description:
+        "Consulta todo lo relacionado con los cuidados durante tu tratamiento.",
+      image: Carpeta,
+      link: "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc4_Folleto_Pacientes.pdf?id=3706294",
+    },
+    {
+      title: "Protección de datos",
+      description:
+        "Conoce nuestro manual de protección de datos y el manejo de tu información.",
+      image: Correo,
+      link: "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PE-M1-GG_Pol%C3%ADticasTmtoDatosPersonales.pdf?id=3706292",
+    },
+    {
+      title: "Historia Clínica",
+      description:
+        "Solicita tu historia clínica y conoce los lineamientos para su entrega.",
+      image: Caset,
+      link: "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PM-M1-GCE%20ManejoHistoriaCl%C3%ADnica.pdf?id=3706293",
+    },
+  ];
+
+  const servicios = [
+    {
+      title: "Atención Médica Especializada",
+      description: "Contamos con un equipo médico altamente capacitado.",
+    },
+    {
+      title: "Laboratorio Clínico",
+      description: "Servicios de análisis clínicos con resultados rápidos.",
+    },
+    {
+      title: "Urgencias",
+      description: "Atención de urgencias las 24 horas, todos los días.",
+    },
+  ];
+
+  const testimonios = [
+    {
+      name: "Juan Pérez",
+      feedback: "Excelente atención, siempre se preocupan por mi salud.",
+    },
+    {
+      name: "María López",
+      feedback: "Los mejores profesionales, siempre atentos y amables.",
+    },
+    {
+      name: "Carlos Rodríguez",
+      feedback: "La atención que recibí fue excepcional, muy recomendado.",
+    },
+  ];
+
+  const [hoveredCard, setHoveredCard] = useState(null);
+
   return (
     <>
-      <Helmet title="Hemo Group" />
+      <Helmet title="Hemo Group - Atención Hospitalaria" />
       <Navbar />
-      <div className="container">
+      <div className="swiper-container">
         <SliderSwiper imagenes={imagenes} />
-        <section className="quienes-somos-section">
-          <div className="quienes-somos-content">
-            <Typography variant="h4" component="div" gutterBottom>
-              <b>Quienes somos </b>
-            </Typography>
-            <Typography variant="h4">
-              <b>Misíon </b>
-            </Typography>
-            <p style={{ textAlign: "start" }}>
-              Somos una institución prestadora de servicios de salud
-              especializada en enfermedades hematológicas y oncológicas,
-              enfocada en la atención humanizada e integral, comprometida con la
-              seguridad del paciente, contribuyendo así al mejoramiento de la
-              calidad de vida
-            </p>
-            <br />
-            <Typography variant="h4">
-              <b>Visíon </b>
-            </Typography>
-            <p style={{ textAlign: "start" }}>
-              En el año 2025, seremos una institución reconocida a nivel
-              nacional en el cuidado, tratamiento e investigación de
-              enfermedades hematológicas y oncológicas, apoyado en nuestros
-              valores corporativos y política de calidad.
-            </p>
-            <br />
-            <MoreInfoButton />
-          </div>
-        </section>
-
+      </div>
+      <Container maxWidth="lg" className="container">
+        {/* Valores Section */}
         <section className="valores">
           <Typography
-            variant="h4"
-            sx={{ color: "white !important" }}
-            component="div"
+            variant="h3"
+            paragraph
             gutterBottom
+            sx={{ textAlign: "center", mb: 4 }}
           >
             Nuestros Valores
           </Typography>
-
-          <Grid container spacing={6} padding={10} justifyContent="center">
-            <Grid item xs={12} sm={6} md={3}>
-              <Card
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={CardOne}
-                  alt="Responsabilidad"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Responsabilidad
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Nos hacemos cargo de las consecuencias de nuestras acciones
-                    y decisiones.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={CardThree}
-                  alt="Respeto"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Respeto
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Valoramos y consideramos las opiniones y necesidades de los
-                    demás.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={CardTwo}
-                  alt="Integridad"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Humanización
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Actuamos con honestidad y coherencia en todas nuestras
-                    acciones.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={CardFive}
-                  alt="Integridad"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Compromiso
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Dedicados a nuestros clientes de la manera más excepcional,
-                    con el objetivo de ofrecerte el mejor servicio posible.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={12} sm={6} md={3}>
-              <Card
-                sx={{
-                  width: "100%",
-                  height: "100%",
-                  display: "flex",
-                  flexDirection: "column",
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="200"
-                  image={CardFour}
-                  alt="Integridad"
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Integridad
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Comprometidos con la integridad en cada paso, nos esforzamos
-                    por actuar de manera honesta y ética en todas nuestras
-                    interacciones.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
+          <Grid container spacing={4} justifyContent="center">
+            {valores.map((valor, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Card
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                    transition: "transform 0.3s",
+                    boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)",
+                    "&:hover": {
+                      transform: "scale(1.05)",
+                      boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)",
+                    },
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="200"
+                    image={valor.image}
+                    alt={valor.title}
+                  />
+                  <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
+                    <Typography gutterBottom variant="h5">
+                      <Box sx={{ display: "flex", justifyContent: "center" }}>
+                        {[...Array(5)].map((_, i) => (
+                          <StarIcon
+                            key={i}
+                            color={i < 4 ? "primary" : "disabled"}
+                          />
+                        ))}
+                      </Box>
+                      {valor.title}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {valor.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
         </section>
 
+        {/* Contigo Section */}
         <section className="quienes-somos-section">
-          <div className="quienes-somos-content">
-            <Typography variant="h4" component="div" gutterBottom>
-              Hemo Group Contigo
-            </Typography>
-            <div className="contigo-container">
-              <div className="contigo-card">
+          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+            Hemo Group Contigo
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {contigoOptions.map((option, index) => (
+              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
                 <CardActionArea
-                  onClick={() => (window.location.href = "/citas")}
+                  onClick={() => (window.location.href = option.link)}
+                  onMouseEnter={() => setHoveredCard(index)}
+                  onMouseLeave={() => setHoveredCard(null)}
                 >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Lapiz} />
-                  </div>
-                  <Typography variant="h6">Agenda tu cita</Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Te brindamos un espacio para que puedas agendar tu cita de
-                      manera fácil y rápida, ingresa a esta opción y solicita tu
-                      cita.
-                    </Typography>
-                  </CardContent>
+                  <Card
+                    sx={{
+                      transform:
+                        hoveredCard === index ? "scale(1.05)" : "scale(1)",
+                      transition: "transform 0.3s",
+                      boxShadow: "0 3px 5px rgba(0, 0, 0, 0.2)",
+                    }}
+                  >
+                    <Box className="contigo-img" sx={{ padding: 2 }}>
+                      <img
+                        src={option.image}
+                        alt={option.title}
+                        style={{ width: "100%", height: "auto" }}
+                      />
+                    </Box>
+                    <CardContent>
+                      <Typography gutterBottom variant="h6" component="div">
+                        {option.title}
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        {option.description}
+                      </Typography>
+                    </CardContent>
+                  </Card>
                 </CardActionArea>
-              </div>
-              <div className="contigo-card">
-                <CardActionArea
-                  onClick={() =>
-                    (window.location.href =
-                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_DYD.pdf?id=3706296")
-                  }
-                >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Libro} />
-                  </div>
-                  <Typography variant="h6">Deberes y derechos</Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Aquí puedes conocer tus derechos y deberes que como
-                      usuario de Hemo Group tienes. Estamos comprometidos con tu
-                      bienestar y seguridad
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </div>
-              <div className="contigo-card">
-                <CardActionArea
-                  onClick={() =>
-                    (window.location.href =
-                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc3_PE-R4-GG%20PoliticaInstitucional.pdf?id=3706295")
-                  }
-                >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Candado} />
-                  </div>
-                  <Typography variant="h6">
-                    Política de seguridad del paciente
-                  </Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Porque nuestro compromiso es brindarte una atención
-                      segura, con calidad, y humanizada, tenemos implementada la
-                      política de seguridad del paciente, te invitamos a que la
-                      conozcas..
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </div>
-              <div className="contigo-card">
-                <CardActionArea
-                  onClick={() =>
-                    (window.location.href =
-                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_Doc4_Folleto_Pacientes.pdf?id=3706294")
-                  }
-                >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Carpeta} />
-                  </div>
-                  <Typography variant="h6">Manual del paciente</Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Queremos que te mantengas informado, por eso contamos con
-                      el manual del paciente donde puedes consultar todo lo
-                      relacionado a los cuidados que debes tener durante tu
-                      tratamiento de quimioterapia, da clic y conoce toda la
-                      información que tenemos para ti.
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </div>
-              <div className="contigo-card">
-                <CardActionArea
-                  onClick={() =>
-                    (window.location.href =
-                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PE-M1-GG_Pol%C3%ADticasTmtoDatosPersonales.pdf?id=3706292")
-                  }
-                >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Correo} />
-                  </div>
-                  <Typography variant="h6">
-                    Manual de tratamiento de protección de datos
-                  </Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Hemo Group respeta el derecho que tienen nuestros usuarios
-                      de conocer, actualizar y rectificar las informaciones que
-                      se hayan recogido sobre ellos, entra acá y conoce nuestro
-                      manual de protección de datos.
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </div>
-              <div className="contigo-card">
-                <CardActionArea
-                  onClick={() =>
-                    (window.location.href =
-                      "https://uploads.strikinglycdn.com/files/8173c8c5-5208-494e-9924-c70672bd13dd/Hemogroup_PM-M1-GCE%20ManejoHistoriaCl%C3%ADnica.pdf?id=3706293")
-                  }
-                >
-                  <div className="contigo-img">
-                    <CardMedia component="img" image={Caset} />
-                  </div>
-                  <Typography variant="h6">
-                    Manejo y entrega de la Historia Clínica
-                  </Typography>
-                  <CardContent>
-                    <Typography
-                      className="contigo-parrafo"
-                      variant="body2"
-                      color="text.secondary"
-                    >
-                      Porque tienes derecho a solicitar tu historia clínica y
-                      conocer el manejo que se le da, puedes ingresar a esta
-                      opción y conocer los lineamientos para la solicitud y
-                      entrega de tu historia clínica.
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </div>
-            </div>
-          </div>
-          <WppBoton />
+              </Grid>
+            ))}
+          </Grid>
         </section>
-        <Footer />
-      </div>
+
+        {/* Services Section */}
+        <section>
+          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+            Nuestros Servicios
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {servicios.map((servicio, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Paper elevation={3} sx={{ padding: 3, textAlign: "center" }}>
+                  <Typography variant="h6" gutterBottom>
+                    {servicio.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {servicio.description}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </section>
+
+        {/* Testimonials Section */}
+        <section>
+          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+            Testimonios
+          </Typography>
+          <Grid container spacing={4} justifyContent="center">
+            {testimonios.map((testimonio, index) => (
+              <Grid item xs={12} sm={6} md={4} key={index}>
+                <Paper
+                  elevation={3}
+                  sx={{
+                    padding: 3,
+                    textAlign: "center",
+                    backgroundColor: "#f9f9f9",
+                  }}
+                >
+                  <Typography variant="body1" italic>
+                    "{testimonio.feedback}"
+                  </Typography>
+                  <Typography variant="subtitle2" align="right" sx={{ mt: 2 }}>
+                    - {testimonio.name}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+        </section>
+
+        {/* WhatsApp Button */}
+        <WppBoton />
+      </Container>
+      <Footer />
     </>
   );
 }

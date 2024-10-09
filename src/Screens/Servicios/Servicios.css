@@ -6,7 +6,7 @@
   max-width: 85%; /* Asegura que el contenedor no exceda los 800px pero sea adaptable */
   padding: 20px;
   box-sizing: border-box;
-  margin-bottom: 100px!important;
+  margin-bottom: 100px !important;
 }
 
 .servicio-tarjeta {

@@ -7,7 +7,7 @@
   justify-content: flex-end;
   align-items: center;
   border-radius: 24px;
-  background: #f5f6f7;
+  background: #ffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: fixed; /* Fija el navbar en la parte inferior */
   bottom: 0; /* Alinea en la parte inferior de la ventana */

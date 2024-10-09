@@ -1,134 +1,42 @@
 .container {
   width: 100%;
-  height: 100vh;
-  margin-top: 110px;
-}
-
-.quienes-somos-section {
-  background-color: rgba(236, 236, 236, 0.87);
-  background-size: cover;
-  padding: 40px 0;
-  text-align: center;
-}
-
-.quienes-somos-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.quienes-somos-content h4 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.quienes-somos-content p {
-  font-size: 16px;
-  color: #666;
-  line-height: 1.6;
-}
-
-.valores {
-  background-color: rgb(116, 207, 226);
-  padding: 20px 0; /* Espaciado superior e inferior */
-  text-align: center; /* Alineación central para el texto */
-}
-
-.valores .MuiTypography-h4 {
-  color: #333; /* Color oscuro para el título */
-  margin-bottom: 30px; /* Espaciado debajo del título */
-}
-
-.valores .MuiCard-root {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para las tarjetas */
-  border-radius: 10px; /* Bordes redondeados */
-  transition: transform 0.3s ease; /* Transición suave para efecto hover */
-}
-
-.valores .MuiCard-root:hover {
-  transform: translateY(-5px); /* Elevación ligera al pasar el mouse */
-}
-
-.valores .MuiCardMedia-root {
-  border-top-left-radius: 10px; /* Bordes redondeados para la parte superior izquierda de la imagen */
-  border-top-right-radius: 10px; /* Bordes redondeados para la parte superior derecha de la imagen */
-}
-
-.valores .MuiCardContent-root {
-  padding: 20px; /* Espaciado interno para el contenido de la tarjeta */
-}
-
-.valores .MuiTypography-body2 {
-  color: #666; /* Color suave para el texto secundario */
-}
-
-.contigo-container {
-  display: flex;
-  flex-wrap: wrap; /* Permite que las tarjetas se muevan a la siguiente línea si no caben en una sola fila */
-  justify-content: center; /* Distribuye las tarjetas en el contenedor */
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.contigo-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px; /* Espacio entre tarjetas */
-  padding: 20px; /* Espacio alrededor del contenedor para evitar que las tarjetas toquen los bordes */
-}
-
-.contigo-card {
-  width: 100%;
-  margin-top: 30px;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para profundidad */
-  border-radius: 20px; /* Bordes redondeados */
-  background-color: #fff; /* Fondo blanco para resaltar las tarjetas sobre diferentes fondos */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves para efectos al pasar el mouse */
+}
+
+.swiper-container {
+  margin-top: 80px;
+}
+
+.valores {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.quienes-somos-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.contigo-card {
+  transition: transform 0.3s ease;
+  height: 250px;
 }
 
 .contigo-card:hover {
-  transform: translateY(-5px); /* Eleva la tarjeta al pasar el mouse */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más profunda para efecto de elevación */
+  transform: scale(1.05);
 }
 
 .contigo-img {
-  width: 100%;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 1px solid #eee; /* Línea sutil para separar imagen del contenido */
 }
 
 .contigo-img img {
-  width: 180px;
-  height: 180px;
-  object-fit: cover;
-  margin-top: -60px; /* Eleva la imagen para que sobresalga */
-}
-
-/* Responsive Design */
-@media (max-width: 600px) {
-  .valores .MuiGrid-grid-xs-12 {
-    padding: 0 10px; /* Espaciado lateral en dispositivos móviles */
-  }
-}
-
-@media (max-width: 800px) {
-  .contigo-container {
-    justify-content: space-around; /* Mejora la disposición en pantallas más pequeñas */
-  }
-  .contigo-card {
-    width: calc(50% - 25px); /* Ajusta el ancho de las tarjetas para pantallas pequeñas */
-  }
-}
-
-@media (max-width: 500px) {
-  .contigo-card {
-    width: 100%; /* Las tarjetas ocupan todo el ancho en dispositivos muy pequeños */
-    margin-top: 20px;
-  }
+  max-height: 100%;
+  object-fit: contain;
 }

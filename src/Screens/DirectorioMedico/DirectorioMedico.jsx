@@ -13,7 +13,6 @@ import doctor8 from "../../assets/doctor8.webp";
 import WppBoton from "../../Components/WppBoton/WppBoton";
 import Footer from "../../Components/Footer/Footer";
 
-
 function DirectorioMedico() {
   const doctors = [
     {
@@ -70,14 +69,15 @@ function DirectorioMedico() {
       <Navbar />
       <Container maxWidth="lg" style={{ marginTop: 110, marginBottom: 100 }}>
         <Typography
-          variant="h4"
+          variant="h3"
           gutterBottom
+          paragraph
           style={{ textAlign: "center", fontWeight: "bold" }}
         >
           Doctores
         </Typography>
         <Typography variant="h5" gutterBottom style={{ textAlign: "center" }}>
-          Presentación de los doctores
+          Presentación de nuestros doctores
         </Typography>
         <Box
           display="flex"
@@ -115,7 +115,7 @@ function DirectorioMedico() {
         </Box>
       </Container>
       <WppBoton />
-      <Footer/>
+      <Footer />
     </>
   );
 }
