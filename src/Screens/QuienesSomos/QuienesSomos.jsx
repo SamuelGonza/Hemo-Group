@@ -21,11 +21,20 @@ export default function QuienesSomos() {
         <SliderSwiper imagenes={imagenes} />
         <section className="quienes-somos-section">
           <div className="quienes-somos-content">
-            <Typography variant="h4" component="div" gutterBottom>
+            <Typography
+              variant="h4"
+              component="div"
+              gutterBottom
+              sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+            >
               HEMATONCOLOGY & SPECIALITY MEDICAL GROUP
             </Typography>
             <Typography
-              sx={{ textAlign: "start", marginBottom: "20px" }}
+              sx={{
+                textAlign: "start",
+                marginBottom: "20px",
+                fontFamily: "Noto Sans",
+              }}
               variant="body2"
             >
               <b>HEMO GROUP</b> es una Sociedad por Acciones Simplificada
@@ -35,7 +44,11 @@ export default function QuienesSomos() {
               enfermedades hematológicas y oncológicas.
             </Typography>
             <Typography
-              sx={{ textAlign: "start", marginBottom: "20px" }}
+              sx={{
+                textAlign: "start",
+                marginBottom: "20px",
+                fontFamily: "Noto Sans",
+              }}
               variant="body2"
             >
               <b>HEMO GROUP</b> SAS empezó a ofrecer sus servicios en Diciembre
@@ -48,7 +61,11 @@ export default function QuienesSomos() {
               vigente
             </Typography>
             <Typography
-              sx={{ textAlign: "start", marginBottom: "20px" }}
+              sx={{
+                textAlign: "start",
+                marginBottom: "20px",
+                fontFamily: "Noto Sans",
+              }}
               variant="body2"
             >
               En Junio de <b>2014 HEMO GROUP</b> se habilita ante el Ministerio
@@ -57,7 +74,11 @@ export default function QuienesSomos() {
               oncología clínica y hematología oncológica.
             </Typography>
             <Typography
-              sx={{ textAlign: "start", marginBottom: "20px" }}
+              sx={{
+                textAlign: "start",
+                marginBottom: "20px",
+                fontFamily: "Noto Sans",
+              }}
               variant="body2"
             >
               En Septiembre de 2017, trasladamos nuestros servicios a una nueva
@@ -65,7 +86,11 @@ export default function QuienesSomos() {
               capacidad instalada.
             </Typography>
             <Typography
-              sx={{ textAlign: "start", marginBottom: "20px" }}
+              sx={{
+                textAlign: "start",
+                marginBottom: "20px",
+                fontFamily: "Noto Sans",
+              }}
               variant="body2"
             >
               En el año 2019 habilitamos los servicios de hematoncología
@@ -76,8 +101,11 @@ export default function QuienesSomos() {
         </section>
         <section className="quienes-somos-section">
           <div className="quienes-somos-content">
-            <Typography variant="h4">
-              <b>Misíon </b>
+            <Typography
+              variant="h4"
+              sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+            >
+              Misíon
             </Typography>
             <p style={{ textAlign: "start" }}>
               Somos una institución prestadora de servicios de salud
@@ -87,8 +115,11 @@ export default function QuienesSomos() {
               calidad de vida
             </p>
             <br />
-            <Typography variant="h4">
-              <b>Visíon </b>
+            <Typography
+              variant="h4"
+              sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+            >
+              Visíon
             </Typography>
             <p style={{ textAlign: "start" }}>
               En el año 2025, seremos una institución reconocida a nivel

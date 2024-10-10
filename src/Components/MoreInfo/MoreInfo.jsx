@@ -12,6 +12,11 @@ const MoreInfoButton = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
+      style={{
+        color: "white",
+        fontFamily: "Noto Sans",
+        fontWeight: "bold",
+      }}
     >
       Más información
     </Button>

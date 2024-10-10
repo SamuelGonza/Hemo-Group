@@ -10,10 +10,20 @@ import {
   Button,
   Box,
   Grid,
+  useMediaQuery,
+  useTheme,
 } from "@mui/material";
+import { styled } from "@mui/system";
 import "./Contacto.css"; // Asegúrate de tener este import
 
-function Contacto() {
+const SubmitButton = styled(Button)(({ theme }) => ({
+  backgroundColor: "#005CA8",
+  color: "#fff",
+  padding: "12px 24px",
+  fontSize: "1.2rem",
+}));
+
+const Contacto = () => {
   const [contactData, setContactData] = useState({
     nombre: "",
     correo: "",
@@ -21,19 +31,22 @@ function Contacto() {
     mensaje: "",
   });
 
-   const handleChange = (e) => {
-     const { name, value } = e.target;
-     setContactData((prevState) => ({
-       ...prevState,
-       [name]: value,
-     }));
-   };
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-   const handleSubmit = (e) => {
-     e.preventDefault();
-     // Aquí puedes implementar la lógica para manejar el envío del formulario, como enviar los datos a una API.
-     console.log(contactData);
-   };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setContactData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Aquí puedes implementar la lógica para manejar el envío del formulario, como enviar los datos a una API.
+    console.log(contactData);
+  };
 
   return (
     <>
@@ -41,17 +54,28 @@ function Contacto() {
         <title>Contacto - Hemo Group</title>
       </Helmet>
       <Navbar />
-      <div className="contacto-container">
-        <Typography variant="h4" component="h1" gutterBottom>
-          Contacto
+      <Container maxWidth="lg" sx={{ py: 5, mt: 10 }}>
+        <Typography
+          variant="h4"
+          component="h1"
+          gutterBottom
+          align="center"
+          sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+        >
+          Contáctanos
         </Typography>
-        <Grid container spacing={3}>
+        <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <Box
               component="form"
               onSubmit={handleSubmit}
               noValidate
-              className="form-container"
+              sx={{
+                backgroundColor: "#f9f9f9",
+                p: 4,
+                borderRadius: 2,
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.1)",
+              }}
             >
               <TextField
                 required
@@ -62,6 +86,7 @@ function Contacto() {
                 value={contactData.nombre}
                 onChange={handleChange}
                 margin="normal"
+                sx={{ mb: 3 }}
               />
               <TextField
                 required
@@ -72,6 +97,7 @@ function Contacto() {
                 value={contactData.correo}
                 onChange={handleChange}
                 margin="normal"
+                sx={{ mb: 3 }}
               />
               <TextField
                 required
@@ -82,6 +108,7 @@ function Contacto() {
                 value={contactData.telefono}
                 onChange={handleChange}
                 margin="normal"
+                sx={{ mb: 3 }}
               />
               <TextField
                 required
@@ -92,27 +119,41 @@ function Contacto() {
                 value={contactData.mensaje}
                 onChange={handleChange}
                 multiline
-                rows={4}
+                rows={isMobile ? 4 : 6}
                 margin="normal"
+                sx={{ mb: 3 }}
               />
-              <Button
-                type="submit"
-                fullWidth
+              <SubmitButton
                 variant="contained"
-                className="submit-button"
+                color="primary"
+                fullWidth
+                style={{
+                  color: "white",
+                  fontFamily: "Noto Sans",
+                  fontWeight: "bold",
+                }}
               >
                 Enviar
-              </Button>
+              </SubmitButton>
             </Box>
           </Grid>
-          <Grid item xs={12} md={6} className="map-container">
+          <Grid
+            item
+            xs={12}
+            md={6}
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Map />
           </Grid>
         </Grid>
-      </div>
+      </Container>
       <Footer />
     </>
   );
-}
+};
 
 export default Contacto;

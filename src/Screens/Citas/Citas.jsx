@@ -96,11 +96,23 @@ function Citas() {
         <Typography
           variant="h4"
           gutterBottom
-          style={{ textAlign: "center", fontWeight: "bold" }}
+          style={{
+            textAlign: "center",
+            fontFamily: "Noto Sans",
+            fontWeight: "bold",
+          }}
         >
           Hemo Group Contigo
         </Typography>
-        <Typography variant="h5" gutterBottom style={{ textAlign: "center" }}>
+        <Typography
+          variant="h5"
+          gutterBottom
+          style={{
+            textAlign: "center",
+            fontFamily: "Noto Sans",
+            fontWeight: "bold",
+          }}
+        >
           Envíanos tu información y nos comunicaremos contigo.
         </Typography>
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 2 }}>
@@ -156,6 +168,8 @@ function Citas() {
               padding: 30,
               cursor: "pointer",
               textAlign: "center",
+              fontFamily: "Noto Sans",
+              fontWeight: "bold",
             }}
           >
             Arrastra y suelta tus archivos aquí o clic para seleccionar (1 a 3
@@ -182,10 +196,14 @@ function Citas() {
             </Grid>
           </Grid>
           <Button
-            type="submit"
-            fullWidth
             variant="contained"
-            sx={{ mt: 3, mb: 2 }}
+            color="primary"
+            fullWidth
+            style={{
+              color: "white",
+              fontFamily: "Noto Sans",
+              fontWeight: "bold",
+            }}
           >
             Enviar
           </Button>

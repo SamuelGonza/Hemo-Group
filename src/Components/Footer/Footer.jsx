@@ -44,11 +44,23 @@ function Footer() {
           <i className="ri-instagram-fill"></i>
         </a>
       </div>
-      <p style={{ marginBottom: "10px" }}>
+      <p
+        style={{
+          marginBottom: "10px",
+          fontFamily: "Noto Sans",
+          fontWeight: "bold",
+        }}
+      >
         © {new Date().getFullYear()} Hemo Group. Todos los derechos reservados.
       </p>
-      <p style={{ marginBottom: "0" }}>
-        Contáctanos: info@hemogroup.com | +1 (800) 123-4567
+      <p
+        style={{
+          marginBottom: "0",
+          fontFamily: "Noto Sans",
+          fontWeight: "bold",
+        }}
+      >
+        Contáctanos: info@hemogroup.com | +57 300 9132559
       </p>
     </div>
   );

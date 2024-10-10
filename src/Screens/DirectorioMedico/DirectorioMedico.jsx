@@ -82,9 +82,9 @@ function DirectorioMedico() {
           variant="h3"
           sx={{
             textAlign: "center",
+            fontFamily: "Noto Sans",
             fontWeight: "bold",
             mb: 2,
-            color: "#000",
           }}
         >
           Doctores
@@ -130,10 +130,10 @@ function DirectorioMedico() {
                         width: 240,
                         height: 240,
                         marginBottom: 2,
-                        border: "4px solid #00FFFF",
+                        border: "4px solid rgb(116, 207, 226)",
                         transition: "box-shadow 0.3s ease-in-out",
                         "&:hover": {
-                          boxShadow: "0px 0px 15px 5px #00FFFF",
+                          boxShadow: "0px 0px 5px 5px rgb(116, 207, 226)",
                         },
                       }}
                     />
@@ -144,13 +144,20 @@ function DirectorioMedico() {
                           textAlign: "center",
                           color: "#000",
                           textShadow: "0px 0px 5px rgba(255, 255, 255, 0.6)",
+                          fontFamily: "Noto Sans",
+                          fontWeight: "bold",
                         }}
                       >
                         {doctor.name}
                       </Typography>
                       <Typography
                         variant="body2"
-                        sx={{ color: "#B0E0E6", textAlign: "center" }}
+                        sx={{
+                          color: "rgb(116, 207, 226)",
+                          textAlign: "center",
+                          fontFamily: "Noto Sans",
+                          fontWeight: "bold",
+                        }}
                       >
                         {doctor.specialty}
                       </Typography>

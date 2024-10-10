@@ -1,8 +1,56 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif !important;
+  font-family: "Noto Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400; /* Valor por defecto, puedes cambiarlo */
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  line-height: 1.6; /* Mejor para la legibilidad */
+  -webkit-font-smoothing: antialiased; /* Mejora la nitidez del texto en algunos navegadores */
+  -moz-osx-font-smoothing: grayscale; /* Mejora la apariencia de la fuente en sistemas OS X */
+  text-rendering: optimizeLegibility; /* Optimiza el renderizado de texto */
+  scroll-behavior: smooth; /* Mejora la experiencia de scroll */
+}
+
+html {
+  font-size: 16px; /* Establece un tamaño base de fuente */
+}
+
+body {
+  min-height: 100vh; /* Asegura que el cuerpo ocupa toda la pantalla */
+  overflow: auto; /* Permite el scroll */
+  scrollbar-width: none; /* Oculta el scrollbar en Firefox */
+  -ms-overflow-style: none; /* Oculta el scrollbar en IE y Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Oculta el scrollbar en Chrome, Safari y Opera */
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit; /* Asegura que los elementos del formulario usen la fuente del documento */
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /* Asegura que los enlaces usen el color del texto circundante */
+}
+
+ul,
+ol {
+  list-style: none; /* Elimina el estilo predeterminado de las listas */
 }

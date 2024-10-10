@@ -147,9 +147,15 @@ function Home() {
             variant="h3"
             paragraph
             gutterBottom
-            sx={{ textAlign: "center", mb: 4, mt: 4 }}
+            sx={{
+              textAlign: "center",
+              mb: 5,
+              mt: 5,
+              fontFamily: "Noto Sans",
+              fontWeight: "bold",
+            }}
           >
-            Nuestros Valores
+            Nuestros valores
           </Typography>
           <Grid container spacing={4} justifyContent="center">
             {valores.map((valor, index) => (
@@ -175,7 +181,11 @@ function Home() {
                     alt={valor.title}
                   />
                   <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
-                    <Typography gutterBottom variant="h5">
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+                    >
                       <Box sx={{ display: "flex", justifyContent: "center" }}>
                         {[...Array(5)].map((_, i) => (
                           <StarIcon
@@ -186,7 +196,11 @@ function Home() {
                       </Box>
                       {valor.title}
                     </Typography>
-                    <Typography variant="body2" color="text.secondary">
+                    <Typography
+                      variant="body2"
+                      color="text.secondary"
+                      sx={{ fontFamily: "Noto Sans" }}
+                    >
                       {valor.description}
                     </Typography>
                   </CardContent>
@@ -198,7 +212,15 @@ function Home() {
 
         {/* Contigo Section */}
         <section className="quienes-somos-section">
-          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+          <Typography
+            variant="h3"
+            sx={{
+              textAlign: "center",
+              mb: 4,
+              fontFamily: "Noto Sans",
+              fontWeight: "bold",
+            }}
+          >
             Hemo Group Contigo
           </Typography>
           <Grid container spacing={4} justifyContent="center">
@@ -227,10 +249,19 @@ function Home() {
                       />
                     </Box>
                     <CardContent>
-                      <Typography gutterBottom variant="h6" component="div">
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+                      >
                         {option.title}
                       </Typography>
-                      <Typography variant="body2" color="text.secondary">
+                      <Typography
+                        variant="body2"
+                        color="text.secondary"
+                        sx={{ fontFamily: "Noto Sans" }}
+                      >
                         {option.description}
                       </Typography>
                     </CardContent>
@@ -243,7 +274,15 @@ function Home() {
 
         {/* Testimonials Section */}
         <section style={{ mb: 8 }}>
-          <Typography variant="h4" sx={{ textAlign: "center", mb: 4 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              textAlign: "center",
+              mb: 4,
+              fontFamily: "Noto Sans",
+              fontWeight: "bold",
+            }}
+          >
             Testimonios
           </Typography>
           <Grid container spacing={4} justifyContent="center">
@@ -257,10 +296,18 @@ function Home() {
                     backgroundColor: "#f9f9f9",
                   }}
                 >
-                  <Typography variant="body1" italic>
+                  <Typography
+                    variant="body1"
+                    italic
+                    sx={{ fontFamily: "Noto Sans" }}
+                  >
                     "{testimonio.feedback}"
                   </Typography>
-                  <Typography variant="subtitle2" align="right" sx={{ mt: 2 }}>
+                  <Typography
+                    variant="subtitle2"
+                    align="right"
+                    sx={{ mt: 2, fontFamily: "Noto Sans", fontWeight: "bold" }}
+                  >
                     - {testimonio.name}
                   </Typography>
                 </Paper>

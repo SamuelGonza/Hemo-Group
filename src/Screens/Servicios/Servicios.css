@@ -52,18 +52,28 @@
   font-size: 1.5em;
   color: #333; /* Mejora la legibilidad */
   margin-bottom: 10px; /* Ajusta el espaciado */
+  font-family: "Noto Sans";
+  font-weight: bold;
 }
 
 .servicio-info p {
   margin: 20px 0;
   color: #666; /* Suaviza el color del texto para mejor lectura */
   line-height: 1.6; /* Mejora la legibilidad */
+  font-family: "Noto Sans";
 }
 
 .servicios-list {
   list-style: inside; /* Ajusta el estilo de lista para que se muestre dentro del contenido */
   padding-left: 0; /* Elimina el padding innecesario */
   margin-top: 20px;
+}
+
+.servicios-list li {
+  margin: 20px 0;
+  color: #666; /* Suaviza el color del texto para mejor lectura */
+  line-height: 1.6; /* Mejora la legibilidad */
+  font-family: "Noto Sans";
 }
 
 @media (max-width: 768px) {
