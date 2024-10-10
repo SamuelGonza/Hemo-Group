@@ -16,7 +16,18 @@ export default function Servicios() {
       <Helmet title="Servicios - Hemo Group" />
       <Navbar />
       <div className="container">
-        <h1 style={{ textAlign: "center", marginBottom: "30px" }}>Servicios</h1>
+        <Typography
+          variant="h3"
+          style={{
+            fontFamily: "Noto Sans",
+            fontWeight: "bold",
+            color: "#005CA8",
+            textAlign: "center",
+            marginTop: 110,
+          }}
+        >
+          Servicios
+        </Typography>
         <div className="tarjetas-servicios-container">
           <div className="servicio-tarjeta">
             <div className="servicio-imagen">

@@ -42,11 +42,6 @@ const Navbar = () => {
               Agenda una cita
             </Link>
           </li>
-          <li>
-            <Link to="/contacto" className="nav-link" onClick={toggleMenu}>
-              Contáctanos
-            </Link>
-          </li>
         </ul>
         <div className="navbar-buttons">
           <Link to="/contacto" className="sign-in-button">
