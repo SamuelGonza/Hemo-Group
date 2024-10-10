@@ -1,50 +1,69 @@
-import { NavLink, useNavigate } from "react-router-dom";
-import logoSolo from "../../assets/navbar-assets/LogoSolo.svg";
-import "./Navbar.css";
+import { Link } from "react-router-dom";
 import { useState } from "react";
+import logo from "../../assets/navbar-assets/LogoCompleto.svg";
+import "./Navbar.css";
 
-export default function Navbar() {
-  const navigate = useNavigate();
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="navbar">
-      <div className="navbar-logo">
-        <img className="logo1" src={logoSolo} alt="HemoGroupLogo" />
+    <nav className="navbar">
+      <div className="navbar-container">
+        <img src={logo} alt="Logo" className="navbar-logo" />
+        <ul className={`navbar-links ${isOpen ? "active" : ""}`}>
+          <button className="close-menu" onClick={toggleMenu}>
+            X
+          </button>{" "}
+          {/* Botón para cerrar */}
+          <li>
+            <Link to="/" className="nav-link" onClick={toggleMenu}>
+              Inicio
+            </Link>
+          </li>
+          <li>
+            <Link to="/quienessomos" className="nav-link" onClick={toggleMenu}>
+              ¿Quiénes Somos?
+            </Link>
+          </li>
+          <li>
+            <Link to="/servicios" className="nav-link" onClick={toggleMenu}>
+              Servicios
+            </Link>
+          </li>
+          <li>
+            <Link to="/directorio" className="nav-link" onClick={toggleMenu}>
+              Directorio Médico
+            </Link>
+          </li>
+          <li>
+            <Link to="/citas" className="nav-link" onClick={toggleMenu}>
+              Agenda una cita
+            </Link>
+          </li>
+          <li>
+            <Link to="/contacto" className="nav-link" onClick={toggleMenu}>
+              Contáctanos
+            </Link>
+          </li>
+        </ul>
+        <div className="navbar-buttons">
+          <Link to="/contacto" className="sign-in-button">
+            Contáctanos
+          </Link>
+        </div>
+        <div
+          className={`navbar-toggle ${isOpen ? "active" : ""}`}
+          onClick={toggleMenu}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
       </div>
-      <nav className={`menu-list ${isMobileMenuOpen ? "active" : ""}`}>
-        <NavLink to="/" className="frame">
-          <i className="ri-home-3-line"></i>
-          <p className="li-mobile-p">Inicio</p>
-        </NavLink>
-        <NavLink to="/quienessomos" className="frame">
-          <i className="ri-group-line"></i>
-          <p className="li-mobile-p">Quienes Somos</p>
-        </NavLink>
-        <NavLink to="/servicios" className="frame">
-          <i className="ri-service-line"></i>
-          <p className="li-mobile-p">Servicios</p>
-        </NavLink>
-        <NavLink to="/directorio" className="frame">
-          <i className="ri-handbag-line"></i>
-          <p className="li-mobile-p">Directorio Médico</p>
-        </NavLink>
-        <NavLink to="/citas" className="frame">
-          <i className="ri-calendar-line"></i>
-          <p className="li-mobile-p">Citas</p>
-        </NavLink>
-        <NavLink to="/contacto" className="frame">
-          <i className="ri-file-text-line"></i>
-          <p className="li-mobile-p">Contacto</p>
-        </NavLink>
-      </nav>
-      <div className="hamburger" onClick={toggleMobileMenu}>
-        <i className={`ri-menu-line ${isMobileMenuOpen ? "open" : ""}`}></i>
-      </div>
-    </header>
+    </nav>
   );
-}
+};
+
+export default Navbar;

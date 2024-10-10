@@ -1,14 +1,14 @@
-.WppBtn{
-    position: fixed;
-    bottom: 90px;
-    right: 15px;
-    width: 65px;
-    height: 65px;
-    border-radius: 50%;
-    background-color: #25D366;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: white;
+.WppBtn {
+  position: fixed;
+  bottom: 40px;
+  right: 15px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: #25d366;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
 }
