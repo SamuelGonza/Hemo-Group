@@ -100,6 +100,7 @@ function Citas() {
             textAlign: "center",
             fontFamily: "Noto Sans",
             fontWeight: "bold",
+            color: "#005CA8",
           }}
         >
           Hemo Group Contigo
@@ -111,6 +112,7 @@ function Citas() {
             textAlign: "center",
             fontFamily: "Noto Sans",
             fontWeight: "bold",
+            color: "#005CA8",
           }}
         >
           Envíanos tu información y nos comunicaremos contigo.

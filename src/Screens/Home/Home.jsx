@@ -9,7 +9,6 @@ import {
   Container,
   Button,
   Paper,
-  IconButton,
 } from "@mui/material";
 import { Helmet } from "react-helmet";
 import Navbar from "../../Components/Navbar/Navbar";
@@ -153,6 +152,7 @@ function Home() {
               mt: 5,
               fontFamily: "Noto Sans",
               fontWeight: "bold",
+              color: "#005CA8", // Color de texto mejorado
             }}
           >
             Nuestros valores
@@ -162,16 +162,13 @@ function Home() {
               <Grid item xs={12} sm={6} md={4} key={index}>
                 <Card
                   sx={{
-                    width: "100%",
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
                     transition: "transform 0.3s",
-                    boxShadow: "0 3px 5px rgba(0, 0, 0, 0.3)",
+                    boxShadow: "0 4px 10px rgba(0, 0, 0, 0.2)",
                     "&:hover": {
                       transform: "scale(1.05)",
-                      boxShadow: "0 5px 15px rgba(0, 0, 0, 0.3)",
+                      boxShadow: "0 6px 15px rgba(0, 0, 0, 0.3)",
                     },
+                    borderRadius: "15px", // Bordes redondeados
                   }}
                 >
                   <CardMedia
@@ -180,11 +177,15 @@ function Home() {
                     image={valor.image}
                     alt={valor.title}
                   />
-                  <CardContent sx={{ flexGrow: 1, textAlign: "center" }}>
+                  <CardContent sx={{ textAlign: "center" }}>
                     <Typography
                       gutterBottom
                       variant="h5"
-                      sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+                      sx={{
+                        fontFamily: "Noto Sans",
+                        fontWeight: "bold",
+                        color: "#005CA8", // Color de título mejorado
+                      }}
                     >
                       <Box sx={{ display: "flex", justifyContent: "center" }}>
                         {[...Array(5)].map((_, i) => (
@@ -219,13 +220,14 @@ function Home() {
               mb: 4,
               fontFamily: "Noto Sans",
               fontWeight: "bold",
+              color: "#005CA8", // Color de texto mejorado
             }}
           >
             Hemo Group Contigo
           </Typography>
           <Grid container spacing={4} justifyContent="center">
             {contigoOptions.map((option, index) => (
-              <Grid item xs={12} sm={6} md={4} lg={3} key={index}>
+              <Grid item xs={12} sm={6} md={4} key={index}>
                 <CardActionArea
                   onClick={() => (window.location.href = option.link)}
                   onMouseEnter={() => setHoveredCard(index)}
@@ -237,31 +239,30 @@ function Home() {
                         hoveredCard === index ? "scale(1.05)" : "scale(1)",
                       transition: "transform 0.3s",
                       boxShadow: "0 3px 5px rgba(0, 0, 0, 0.2)",
-                      height: "auto",
+                      borderRadius: "15px", // Bordes redondeados
+                      width: "100%", // Para que ocupe todo el ancho
                     }}
                   >
-                    <Box className="contigo-img" sx={{ padding: 2 }}>
-                      <img
-                        src={option.image}
-                        alt={option.title}
-                        style={{ width: "100%", height: "auto" }}
-                        className="contigo-img"
-                      />
-                    </Box>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      sx={{ objectFit: "contain" }}
+                      image={option.image}
+                      alt={option.title}
+                    />
                     <CardContent>
                       <Typography
                         gutterBottom
-                        variant="h6"
-                        component="div"
-                        sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+                        variant="h5"
+                        sx={{
+                          fontFamily: "Noto Sans",
+                          fontWeight: "bold",
+                          color: "#005CA8", // Color de título mejorado
+                        }}
                       >
                         {option.title}
                       </Typography>
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        sx={{ fontFamily: "Noto Sans" }}
-                      >
+                      <Typography variant="body2" color="text.secondary">
                         {option.description}
                       </Typography>
                     </CardContent>
@@ -272,15 +273,16 @@ function Home() {
           </Grid>
         </section>
 
-        {/* Testimonials Section */}
-        <section style={{ mb: 8 }}>
+        {/* Testimonios Section */}
+        <section className="testimonios-section" style={{ marginTop: "40px" }}>
           <Typography
-            variant="h4"
+            variant="h3"
             sx={{
               textAlign: "center",
               mb: 4,
               fontFamily: "Noto Sans",
               fontWeight: "bold",
+              color: "#005CA8", // Color de texto mejorado
             }}
           >
             Testimonios
@@ -291,22 +293,30 @@ function Home() {
                 <Paper
                   elevation={3}
                   sx={{
-                    padding: 3,
-                    textAlign: "center",
+                    padding: 2,
+                    borderRadius: "15px", // Bordes redondeados
                     backgroundColor: "#f9f9f9",
+                    height: "100%", // Para que ocupe todo el espacio
                   }}
                 >
                   <Typography
                     variant="body1"
-                    italic
-                    sx={{ fontFamily: "Noto Sans" }}
+                    sx={{
+                      textAlign: "center",
+                      fontStyle: "italic",
+                      marginBottom: 2,
+                      color: "#666",
+                    }}
                   >
                     "{testimonio.feedback}"
                   </Typography>
                   <Typography
-                    variant="subtitle2"
-                    align="right"
-                    sx={{ mt: 2, fontFamily: "Noto Sans", fontWeight: "bold" }}
+                    variant="h6"
+                    sx={{
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "#005CA8", // Color de nombre mejorado
+                    }}
                   >
                     - {testimonio.name}
                   </Typography>
@@ -315,10 +325,8 @@ function Home() {
             ))}
           </Grid>
         </section>
-
-        {/* WhatsApp Button */}
-        <WppBoton />
       </Container>
+      <WppBoton />
       <Footer />
     </>
   );

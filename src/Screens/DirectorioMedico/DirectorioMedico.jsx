@@ -84,16 +84,21 @@ function DirectorioMedico() {
             textAlign: "center",
             fontFamily: "Noto Sans",
             fontWeight: "bold",
-            mb: 2,
+            color: "#005CA8",
           }}
         >
           Doctores
         </Typography>
         <Typography
           variant="h5"
-          sx={{ textAlign: "center", mb: 8, color: "#ffffff" }}
+          sx={{
+            textAlign: "center",
+            fontFamily: "Noto Sans",
+            fontWeight: "bold",
+            color: "#005CA8",
+          }}
         >
-          Presentación de nuestros doctores
+          Presentación de nuestro equipo
         </Typography>
         <Box
           display="flex"

@@ -60,7 +60,7 @@ const Contacto = () => {
           component="h1"
           gutterBottom
           align="center"
-          sx={{ fontFamily: "Noto Sans", fontWeight: "bold" }}
+          sx={{ fontFamily: "Noto Sans", fontWeight: "bold", color: "#005CA8" }}
         >
           Contáctanos
         </Typography>
